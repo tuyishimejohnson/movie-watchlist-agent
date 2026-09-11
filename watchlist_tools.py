@@ -34,7 +34,7 @@ def add_movies(title: str) -> str:
 
 # remove a movie
 @tool
-def remove_movies(title: str) -> str:
+def remove_movie(title: str) -> str:
     """Remove a movie from the watchlist."""
     with get_connection() as conn:
         existing = conn.execute(

@@ -18,9 +18,9 @@ def get_connection() -> sqlite3.Connection:
     return conn
 
 
-# Add movies
+# Add movie
 @tool
-def add_movies(title: str) -> str:
+def add_movie(title: str) -> str:
     """Add a movie to the watchlist."""
     with get_connection() as conn:
         existing = conn.execute(
@@ -32,7 +32,7 @@ def add_movies(title: str) -> str:
         return f"{title} added to your list"
 
 
-# remove a movie
+# Remove a movie
 @tool
 def remove_movie(title: str) -> str:
     """Remove a movie from the watchlist."""
@@ -46,7 +46,7 @@ def remove_movie(title: str) -> str:
         return f"{existing[0]} removed from your list"
 
 
-# randomly select a movie
+# Randomly select a movie
 @tool
 def random_movie() -> str:
     """Suggest a random movie from the watchlist."""
@@ -57,7 +57,7 @@ def random_movie() -> str:
     return f"Random movie suggestion: {random.choice(titles)}"
 
 
-# list all movies
+# List all movies
 @tool
 def list_movies() -> str:
     """List all movies in the watchlist."""

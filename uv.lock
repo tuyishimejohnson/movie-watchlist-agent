@@ -338,6 +338,11 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/92/fa/7da07d9977a5e292ef602c1bb911514ff8206e85dc09a66961874345d57a/langchain-1.4.0-py3-none-any.whl", hash = "sha256:af1dc0161d30944a52ec7844d9bf890d0497b12ec0703069f3503b4003cbbac3", size = 161534, upload-time = "2026-09-03T16:59:31.154Z" },
 ]
 
+[package.optional-dependencies]
+anthropic = [
+    { name = "langchain-anthropic" },
+]
+
 [[package]]
 name = "langchain-anthropic"
 version = "1.7.1"
@@ -773,7 +778,7 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "dotenv" },
-    { name = "langchain" },
+    { name = "langchain", extra = ["anthropic"] },
     { name = "langchain-anthropic" },
     { name = "langgraph" },
     { name = "langgraph-checkpoint-sqlite" },
@@ -782,7 +787,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "dotenv", specifier = ">=0.9.9" },
-    { name = "langchain", specifier = ">=1.4.0" },
+    { name = "langchain", extras = ["anthropic"], specifier = ">=1.4.0" },
     { name = "langchain-anthropic", specifier = ">=1.7.1" },
     { name = "langgraph", specifier = ">=1.2.11" },
     { name = "langgraph-checkpoint-sqlite", specifier = ">=3.1.1" },

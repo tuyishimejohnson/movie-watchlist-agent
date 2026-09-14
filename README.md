@@ -31,8 +31,6 @@ Natural-language response
 - **SQLite stores the watchlist.**
 - **Short-term conversation state is managed by LangGraph.**
 
-````
-
 ## Prerequisites
 
 * Python 3.10 or newer
